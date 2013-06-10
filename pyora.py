@@ -382,7 +382,7 @@ class Checks(object):
 
 	def check_archive(self,archive):
 		'''List archive used'''
-		sql = "select  name,trunc((total_mb-free_mb)*100/(total_mb)) PCT from v$asm_diskgroup_stat where name='{0}' ORDER BY 1".format(archive)
+		sql = "select trunc((total_mb-free_mb)*100/(total_mb)) PCT from v$asm_diskgroup_stat where name='{0}' ORDER BY 1".format(archive)
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
