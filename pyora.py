@@ -390,7 +390,8 @@ class Checks(object):
 
 	def query_lock(self):
 		'''Check query lock'''
-		sql = "SELECT count(*) FROM gv$lock l WHERE l.TYPE <> 'MR' and block=1"
+                "SELECT COUNT(1) FROM GV$LOCK WHERE (id1, id2, type) IN (SELECT id1, id2, type FROM GV$LOCK WHERE request>0) ORDER \
+                 BY id1, request"
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
