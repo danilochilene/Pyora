@@ -388,10 +388,19 @@ class Checks(object):
 		for i in res:
 			print i[0]
 
+#	def query_lock(self):
+#		'''Check query lock'''
+#		sql = "SELECT count(*) FROM gv$lock l WHERE l.TYPE <> 'MR' and block=1"
+#		sql = "SELECT DECODE(request,0,'Holder: ','Waiter: ')||sid sess, id1, id2, lmode, request, type FROM GV$LOCK \
+#WHERE (id1, id2, type) IN (SELECT id1, id2, type FROM GV$LOCK WHERE request>0) ORDER BY id1, request"
+#		self.cur.execute(sql)
+#		res = self.cur.fetchall()
+#		for i in res:
+#			print i[0]
+
 	def query_lock(self):
-		'''Check query lock'''
-                "SELECT COUNT(1) FROM GV$LOCK WHERE (id1, id2, type) IN (SELECT id1, id2, type FROM GV$LOCK WHERE request>0) ORDER \
-                 BY id1, request"
+		'''Query lock 2'''
+		sql = "SELECT count(*) FROM gv$lock l WHERE  block=1"
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
@@ -429,6 +438,14 @@ class Checks(object):
 		for i in res:
 			print i[0]
 
+	def conexoes_sabre(self):
+		'''Query Conexoes Sabre'''
+		sql = "select trim(substr(to_char(ds_xml_response),instr(to_char(ds_xml_response),' 1600 ')+6,10)) conn from systur.SABRE_WS_MESSAGE where dt_conversation <= sysdate and ds_xml_request like '%OLTMC USER DISP NAME J4IB%' and rownum = 1 order by dt_atualizacao desc"
+		self.cur.execute(sql)
+		res = self.cur.fetchall()
+		for i in res:
+			print i[0]
+
 class Main(Checks):
     def __init__(self):
         parser = argparse.ArgumentParser()
@@ -450,25 +467,28 @@ class Main(Checks):
         self.args = parser.parse_args()
     
     def db_connect(self):
-    	a = self.args
-    	username = a.username
-    	password = a.password
-    	address = a.address
-    	database = a.database
-    	self.db = cx_Oracle.connect('''{0}/{1}@{2}/{3}'''.format(username,password,address,database))
-    	self.cur = self.db.cursor()
+		a = self.args
+		username = a.username
+		password = a.password
+		address = a.address
+		database = a.database
+		self.db = cx_Oracle.connect('''{0}/{1}@{2}/{3}'''.format(username,password,address,database))
+		self.cur = self.db.cursor()
 
     def db_close(self):
     	self.db.close()
 
     def __call__(self):
-        a = self.args
-        callargs = [getattr(a, name) for name in a.argnames]     
-        self.db_connect()
-        try:
-        	return self.args.func(*callargs)
-        finally:
-        	self.db_close()
+    	try:
+        	a = self.args
+        	callargs = [getattr(a, name) for name in a.argnames]     
+        	self.db_connect()
+        	try:
+        		return self.args.func(*callargs)
+        	finally:
+        		self.db_close()
+        except Exception, err:
+        	print 0
 
 if __name__ == "__main__":
     main = Main()
