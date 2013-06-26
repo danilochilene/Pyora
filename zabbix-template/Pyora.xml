@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-06-10T18:18:33Z</date>
+    <date>2013-06-26T18:57:02Z</date>
     <groups>
+        <group>
+            <name>Pyora</name>
+        </group>
         <group>
             <name>Templates</name>
         </group>
@@ -12,6 +15,9 @@
             <template>Pyora</template>
             <name>Pyora</name>
             <groups>
+                <group>
+                    <name>Pyora</name>
+                </group>
                 <group>
                     <name>Templates</name>
                 </group>
@@ -260,7 +266,7 @@
                     <valuemap/>
                 </item>
                 <item>
-                    <name>Oracle/dbsnglwrite MTZCPD656</name>
+                    <name>Oracle/dbsnglwrite {$DATABASE}</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1554,7 +1560,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},show_tablespaces]</key>
-                    <delay>120</delay>
+                    <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_securityname/>
@@ -1616,17 +1622,8 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace,{#TABLESPACE}].last(0)}&gt;90</expression>
-                            <name>Oracle/Tablespace {#TABLESPACE} used on {$DATABASE} &gt; 90%</name>
-                            <url/>
-                            <status>0</status>
-                            <priority>3</priority>
-                            <description/>
-                            <type>0</type>
-                        </trigger_prototype>
-                        <trigger_prototype>
-                            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace,{#TABLESPACE}].last(0)}&gt;95</expression>
-                            <name>Oracle/Tablespace {#TABLESPACE} used on {$DATABASE} &gt; 95%</name>
+                            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace,{#TABLESPACE}].last(0)}&gt;{$HIGH}</expression>
+                            <name>Oracle/Tablespace {#TABLESPACE} used on {$DATABASE} &gt; {$HIGH} %</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -1658,7 +1655,37 @@
             <name>Oracle/Database {$DATABASE} is down</name>
             <url/>
             <status>0</status>
-            <priority>0</priority>
+            <priority>5</priority>
+            <description>Banco de dados fora do ar - Acionar o DBA de Plantão.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_active].nodata(700)}=1</expression>
+            <name>Oracle/Database {$DATABASE} is not responding</name>
+            <url/>
+            <status>0</status>
+            <priority>5</priority>
+            <description>Banco de dados fora do ar - Acionar o DBA de Plantão.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},query_lock].last(0)}&gt;0</expression>
+            <name>Oracle/Query Lock on {$DATABASE} &gt; 1</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},query_sessions].last(0)}&gt;250</expression>
+            <name>Oracle/Query Sessions on {$DATABASE} &gt; 250</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
             <description/>
             <type>0</type>
             <dependencies/>
