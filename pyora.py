@@ -438,14 +438,6 @@ class Checks(object):
 		for i in res:
 			print i[0]
 
-	def conexoes_sabre(self):
-		'''Query Conexoes Sabre'''
-		sql = "select trim(substr(to_char(ds_xml_response),instr(to_char(ds_xml_response),' 1600 ')+6,10)) conn from systur.SABRE_WS_MESSAGE where dt_conversation <= sysdate and ds_xml_request like '%OLTMC USER DISP NAME J4IB%' and rownum = 1 order by dt_atualizacao desc"
-		self.cur.execute(sql)
-		res = self.cur.fetchall()
-		for i in res:
-			print i[0]
-
 class Main(Checks):
     def __init__(self):
         parser = argparse.ArgumentParser()
