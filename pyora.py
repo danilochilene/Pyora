@@ -359,7 +359,7 @@ class Checks(object):
 			print i[0]
 	
 	def tablespace(self, name):
-		sql = '''SELECT df.tablespace_name "TABLESPACE", ROUND ( (df.bytes - SUM (fs.bytes)) * 100 / df.bytes, 2) "USED" FROM sys.sm$ts_free fs, (  SELECT tablespace_name, SUM (bytes) bytes FROM sys.sm$ts_avail GROUP BY tablespace_name) df WHERE fs.tablespace_name(+) = df.tablespace_name and df.tablespace_name = '{0}' GROUP BY df.tablespace_name, df.bytes ORDER BY 1'''.format(name)
+		sql = '''SELECT df.tablespace_name "TABLESPACE",  ROUND ( (df.bytes - SUM (fs.bytes)) * 100 / df.bytes, 2) "USED" FROM  (SELECT TABLESPACE_NAME,BYTES FROM  sys.sm$ts_free fs UNION ALL SELECT TABLESPACE_NAME,FREE_SPACE FROM DBA_TEMP_FREE_SPACE ) FS, (SELECT tablespace_name, SUM (bytes) bytes FROM sys.sm$ts_avail GROUP BY tablespace_name UNION ALL SELECT TABLESPACE_NAME, SUM(bytes) FROM SYS.DBA_TEMP_FILES GROUP BY tablespace_name ) df WHERE fs.tablespace_name(+) = df.tablespace_name AND df.tablespace_name = '{0}' GROUP BY df.tablespace_name,df.bytes ORDER BY 1'''.format(name)
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
@@ -437,6 +437,14 @@ class Checks(object):
 		res = self.cur.fetchall()
 		for i in res:
 			print i[0]
+
+        def query_sysmetrics(self,metric_name):
+                '''Query v$sysmetric parameters'''
+                sql = "select value from v$sysmetric where METRIC_NAME ='{0}' and rownum <=1 order by INTSIZE_CSEC ".format(metric_name.replace('_',' '))
+                self.cur.execute(sql)
+                res = self.cur.fetchall()
+                for i in res:
+                        print i[0]
 
 class Main(Checks):
     def __init__(self):
