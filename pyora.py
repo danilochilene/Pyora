@@ -8,6 +8,7 @@
 version = 0.1
 import argparse,cx_Oracle
 import inspect
+import json
 import re
 
 def bytes2human(n):
@@ -370,15 +371,12 @@ class Checks(object):
 		sql = "SELECT tablespace_name FROM dba_tablespaces ORDER BY 1";
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
-		rowarray_list = []
-		print '{'
-		print "\t\"data\":[\n\n"
+		key = ['{#TABLESPACE}']
+		lst = []
 		for i in res:
-			print '\t{\n'
-			teste = "\t\t\"{0}\":\"{1}\"{2},\n".format('{#TABLESPACE}', re.sub("[\(\)\{\<>,']", '', str(i,)), '}')
-			print teste[0:-1]
-		print ']';
-		print '}';
+			d=dict(zip(key,i))
+			lst.append(d)
+		print json.dumps({'data': lst})
 
 	def check_archive(self,archive):
 		'''List archive used'''
