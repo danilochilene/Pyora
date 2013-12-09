@@ -2,7 +2,7 @@
 # coding: utf-8
 """
     Author: Danilo F. Chilene
-	Email:	bicofino@gmail.com
+	Email:	bicofino at gmail dot com
 """
 
 version = 0.1
@@ -10,24 +10,6 @@ import argparse,cx_Oracle
 import inspect
 import json
 import re
-
-def bytes2human(n):
-  '''
-  http://code.activestate.com/recipes/578019
-  >>> bytes2human(10000)
-  '9.8K'
-  >>> bytes2human(100001221)
-  '95.4M'
-  '''
-  symbols = ('K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y')
-  prefix = {}
-  for i, s in enumerate(symbols):
-    prefix[s] = 1 << (i+1)*10
-  for s in reversed(symbols):
-    if n >= prefix[s]:
-      value = float(n) / prefix[s]
-      return '%.1f%s' % (value, s)
-  return '%sB' % n
 
 class Checks(object):
 
@@ -84,7 +66,6 @@ class Checks(object):
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
-			#print bytes2human(int(i[0]))
 			print i[0]
 
 	def dbfilesize(self):
@@ -93,7 +74,6 @@ class Checks(object):
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
-			#print bytes2human(int(i[0]))
 			print i[0]
 
 	def version(self):
@@ -366,12 +346,25 @@ class Checks(object):
 		for i in res:
 			print i[1]
 
+
 	def show_tablespaces(self):
 		'''List tablespace names in a JSON like format for Zabbix use'''
 		sql = "SELECT tablespace_name FROM dba_tablespaces ORDER BY 1";
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		key = ['{#TABLESPACE}']
+		lst = []
+		for i in res:
+			d=dict(zip(key,i))
+			lst.append(d)
+		print json.dumps({'data': lst})
+
+	def show_tablespaces_temp(self):
+		'''List tablespace names in a JSON like format for Zabbix use'''
+		sql = "SELECT tablespace FROM V$TEMPSEG_USAGE group by tablespace ORDER BY 1";
+		self.cur.execute(sql)
+		res = self.cur.fetchall()
+		key = ['{#TABLESPACE_TEMP}']
 		lst = []
 		for i in res:
 			d=dict(zip(key,i))
@@ -386,18 +379,8 @@ class Checks(object):
 		for i in res:
 			print i[0]
 
-#	def query_lock(self):
-#		'''Check query lock'''
-#		sql = "SELECT count(*) FROM gv$lock l WHERE l.TYPE <> 'MR' and block=1"
-#		sql = "SELECT DECODE(request,0,'Holder: ','Waiter: ')||sid sess, id1, id2, lmode, request, type FROM GV$LOCK \
-#WHERE (id1, id2, type) IN (SELECT id1, id2, type FROM GV$LOCK WHERE request>0) ORDER BY id1, request"
-#		self.cur.execute(sql)
-#		res = self.cur.fetchall()
-#		for i in res:
-#			print i[0]
-
 	def query_lock(self):
-		'''Query lock 2'''
+		'''Query lock'''
 		sql = "SELECT count(*) FROM gv$lock l WHERE  block=1"
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
@@ -413,7 +396,7 @@ class Checks(object):
 			print i[0]
 
 	def query_rollbacks(self):
-		'''Rollback'''
+		'''Query Rollback'''
 		sql = "select nvl(trunc(sum(used_ublk*4096)/1024/1024),0) from gv$transaction t,gv$session s where ses_addr = saddr"
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
@@ -421,28 +404,28 @@ class Checks(object):
 			print i[0]
 
 	def query_sessions(self):
-		'''Sessions'''
+		'''Query Sessions'''
 		sql = "select count(*) from gv$session where username is not null and status='ACTIVE'"
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
 			print i[0]
 
-	def query_temp(self):
-		'''Query temp'''
-		sql = "select nvl(sum(blocks*8192)/1024/1024,0) from gv$session s, gv$sort_usage u where s.saddr = u.session_addr"
+	def tablespace_temp(self,name):
+		'''Query temporary tablespaces'''
+		sql = '''SELECT round(sum(a.blocks*8192)*100/bytes,2) percentual FROM V$TEMPSEG_USAGE a, dba_temp_files b where tablespace_name='{0}' and a.tablespace=b.tablespace_name group by a.tablespace,b.bytes'''.format(name)
 		self.cur.execute(sql)
 		res = self.cur.fetchall()
 		for i in res:
 			print i[0]
 
-        def query_sysmetrics(self,metric_name):
-                '''Query v$sysmetric parameters'''
-                sql = "select value from v$sysmetric where METRIC_NAME ='{0}' and rownum <=1 order by INTSIZE_CSEC ".format(metric_name.replace('_',' '))
-                self.cur.execute(sql)
-                res = self.cur.fetchall()
-                for i in res:
-                        print i[0]
+	def query_sysmetrics(self,name):
+		'''Query v$sysmetric parameters'''
+		sql = '''select value from v$sysmetric where METRIC_NAME ='{0}' and rownum <=1 order by INTSIZE_CSEC '''.format(name.replace('_',' '))
+		self.cur.execute(sql)
+		res = self.cur.fetchall()
+		for i in res:
+			print i[0]
 
 class Main(Checks):
     def __init__(self):
