@@ -24,6 +24,9 @@
             </groups>
             <applications>
                 <application>
+                    <name>ASM Volumes</name>
+                </application>
+                <application>
                     <name>Oracle</name>
                 </application>
                 <application>
@@ -550,6 +553,48 @@
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Oracle</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                </item>
+                <item>
+                    <name>Oracle/fra_use on {$DATABASE}</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},fra_use]</key>
+                    <delay>300</delay>
+                    <history>7</history>
+                    <trends>90</trends>
+                    <status>0</status>
+                    <value_type>0</value_type>
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
@@ -1801,6 +1846,91 @@
             </items>
             <discovery_rules>
                 <discovery_rule>
+                    <name>Discovery Oracle ASM volumes</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},show_asm_volumes]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>{#ASMVOLUME}:</filter>
+                    <lifetime>30</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>ASM Volume Use on {#ASMVOLUME}</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},asm_volume_use,{#ASMVOLUME}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>0</value_type>
+                            <allowed_hosts/>
+                            <units>%</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>ASM Volumes</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},asm_volume_use,{#ASMVOLUME}].last(0)}&gt;{$HIGH}</expression>
+                            <name>Oracle/ASM Volume {#ASMVOLUME} used &gt; {$HIGH} %</name>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
+                    <graph_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
                     <name>Discovery Oracle tablespaces</name>
                     <type>0</type>
                     <snmp_community/>
@@ -2006,6 +2136,16 @@
             <status>0</status>
             <priority>5</priority>
             <description>Banco de dados fora do ar - Acionar o DBA de Plantão.</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},fra_use].last(0)}&gt;90</expression>
+            <name>Oracle/fra_use used on {$DATABASE} &gt; 90%</name>
+            <url/>
+            <status>0</status>
+            <priority>4</priority>
+            <description>Fast Recovery Area usage &gt; 90%</description>
             <type>0</type>
             <dependencies/>
         </trigger>
