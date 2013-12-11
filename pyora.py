@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
+# vim: tabstop=2 noexpandtab
 """
     Author: Danilo F. Chilene
 	Email:	bicofino at gmail dot com
@@ -346,7 +347,6 @@ class Checks(object):
 		for i in res:
 			print i[1]
 
-
 	def show_tablespaces(self):
 		'''List tablespace names in a JSON like format for Zabbix use'''
 		sql = "SELECT tablespace_name FROM dba_tablespaces ORDER BY 1";
@@ -378,6 +378,25 @@ class Checks(object):
 		res = self.cur.fetchall()
 		for i in res:
 			print i[0]
+  
+	def show_asm_volumes(self):
+		'''List als ASM volumes in a JSON like format for Zabbix use'''
+		sql = "select NAME from v$asm_diskgroup_stat ORDER BY 1";
+		self.cur.execute(sql)
+		res = self.cur.fetchall()
+		key = ['{#ASMVOLUME}']
+		lst = []
+		for i in res:
+			d=dict(zip(key,i))
+			lst.append(d)
+		print json.dumps({'data': lst})
+
+	def asm_volume_use(self, name):
+		sql = "select round(((TOTAL_MB-FREE_MB)/TOTAL_MB*100),2) from v$asm_diskgroup_stat where name = '{0}'".format(name)
+                self.cur.execute(sql)
+                res = self.cur.fetchall()
+                for i in res:
+                        print i[0]
 
 	def query_lock(self):
 		'''Query lock'''
@@ -427,6 +446,14 @@ class Checks(object):
 		for i in res:
 			print i[0]
 
+	def fra_use(self):
+		'''Query the Fast Recovery Area usage'''
+		sql = "select round((SPACE_LIMIT-(SPACE_LIMIT-SPACE_USED))/SPACE_LIMIT*100,2) FROM V$RECOVERY_FILE_DEST"
+                self.cur.execute(sql)
+                res = self.cur.fetchall()
+                for i in res:
+                        print i[0]
+
 class Main(Checks):
     def __init__(self):
         parser = argparse.ArgumentParser()
@@ -470,6 +497,7 @@ class Main(Checks):
         		self.db_close()
         except Exception, err:
         	print 0
+		print str(err)
 
 if __name__ == "__main__":
     main = Main()
