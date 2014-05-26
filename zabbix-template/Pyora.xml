@@ -762,7 +762,7 @@
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
-                    <value_type>3</value_type>
+                    <value_type>1</value_type>
                     <allowed_hosts/>
                     <units/>
                     <delta>0</delta>
@@ -2120,12 +2120,12 @@
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_active].last(0)}#1</expression>
-            <name>Oracle/Database {$DATABASE} is down</name>
+		<expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_active].regexp(ORA)}=1</expression>
+            <name>Oracle/Database {$DATABASE} is down or ORA error found</name>
             <url/>
             <status>0</status>
             <priority>5</priority>
-            <description>Banco de dados fora do ar - Acionar o DBA de Plantão.</description>
+            <description>Contact DBA.</description>
             <type>0</type>
             <dependencies/>
         </trigger>
@@ -2135,7 +2135,7 @@
             <url/>
             <status>0</status>
             <priority>5</priority>
-            <description>Banco de dados fora do ar - Acionar o DBA de Plantão.</description>
+            <description>Contact DBA.</description>
             <type>0</type>
             <dependencies/>
         </trigger>
