@@ -6,7 +6,6 @@ Python script to monitor oracle
 Requirements
 =====
 cx-Oracle==5.1.2
-
 python-argparse
 
 Note:Try installing python-argparse: `easy_install argparse`  or  `yum install python-argarse` on RHEL/Centos.
