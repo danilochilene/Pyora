@@ -454,6 +454,14 @@ class Checks(object):
                 for i in res:
                         print i[0]
 
+        def locked_users(self):
+               '''Query the locked users on the instance'''
+               sql = "SELECT username FROM dba_users WHERE account_status != 'OPEN'"
+               self.cur.execute(sql)
+               res = self.cur.fetchall()
+               for i in res:
+                       print i[0]
+
 class Main(Checks):
     def __init__(self):
         parser = argparse.ArgumentParser()
