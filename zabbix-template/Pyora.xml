@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2013-12-09T16:18:42Z</date>
+    <date>2015-07-23T09:56:05Z</date>
     <groups>
         <group>
             <name>Pyora</name>
@@ -14,6 +14,7 @@
         <template>
             <template>Pyora</template>
             <name>Pyora</name>
+            <description/>
             <groups>
                 <group>
                     <name>Pyora</name>
@@ -25,6 +26,9 @@
             <applications>
                 <application>
                     <name>ASM Volumes</name>
+                </application>
+                <application>
+                    <name>Database Users</name>
                 </application>
                 <application>
                     <name>Oracle</name>
@@ -78,6 +82,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Archive {$ARCHIVE} on {$DATABASE}</name>
@@ -120,6 +125,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Buffer busy waits on {$DATABASE}</name>
@@ -162,6 +168,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Database CPU Time Ratio on {$DATABASE}</name>
@@ -204,6 +211,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Database Wait Time Ratio on {$DATABASE}</name>
@@ -246,6 +254,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/dbprllwrite on {$DATABASE}</name>
@@ -288,6 +297,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/dbscattread on {$DATABASE}</name>
@@ -330,6 +340,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/dbseqread on {$DATABASE}</name>
@@ -372,6 +383,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/dbsnglwrite {$DATABASE}</name>
@@ -414,6 +426,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Deadlocks on {$DATABASE}</name>
@@ -456,6 +469,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Directread on {$DATABASE}</name>
@@ -498,6 +512,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Disk sorts ratio on {$DATABASE}</name>
@@ -540,6 +555,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Enqueue on {$DATABASE}</name>
@@ -582,6 +598,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/fra_use on {$DATABASE}</name>
@@ -624,6 +641,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/freebufwaits on {$DATABASE}</name>
@@ -666,6 +684,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Hard parse ratio on {$DATABASE}</name>
@@ -708,6 +727,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Index fast full scans (full) on {$DATABASE}</name>
@@ -750,6 +770,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Intance is active and open on {$DATABASE}</name>
@@ -792,6 +813,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Lastapplarclog on {$DATABASE}</name>
@@ -834,6 +856,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Lastarclog on {$DATABASE}</name>
@@ -876,6 +899,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Latchfree on {$DATABASE}</name>
@@ -918,6 +942,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Logfilesync on {$DATABASE}</name>
@@ -960,6 +985,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Logonscurrent on {$DATABASE}</name>
@@ -1002,6 +1028,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Logprllwrite on {$DATABASE}</name>
@@ -1044,6 +1071,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Logswcompletion on {$DATABASE}</name>
@@ -1086,6 +1114,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Netresv on {$DATABASE}</name>
@@ -1128,6 +1157,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Netroundtrips on {$DATABASE}</name>
@@ -1170,6 +1200,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Netsent on {$DATABASE}</name>
@@ -1212,6 +1243,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Query Lock on {$DATABASE}</name>
@@ -1254,6 +1286,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Query Redologs on {$DATABASE}</name>
@@ -1296,6 +1329,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Query Rollbacks on {$DATABASE}</name>
@@ -1338,6 +1372,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Query Sessions on {$DATABASE}</name>
@@ -1380,6 +1415,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Query Temp on {$DATABASE}</name>
@@ -1422,6 +1458,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Read Cache hit ratio on {$DATABASE}</name>
@@ -1464,6 +1501,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Redo Writes on {$DATABASE}</name>
@@ -1506,6 +1544,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Size of all datafiles on {$DATABASE}</name>
@@ -1548,6 +1587,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Size of user data (without temp) on {$DATABASE}</name>
@@ -1590,6 +1630,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Table scan rows gotten on {$DATABASE}</name>
@@ -1632,6 +1673,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Table scans (long tables) on {$DATABASE}</name>
@@ -1674,6 +1716,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Uptime on {$DATABASE}</name>
@@ -1716,6 +1759,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/User Commits on {$DATABASE}</name>
@@ -1758,6 +1802,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/User Transaction Per Sec on {$DATABASE}</name>
@@ -1800,6 +1845,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
                 <item>
                     <name>Oracle/Version on {$DATABASE}</name>
@@ -1842,6 +1888,7 @@
                         </application>
                     </applications>
                     <valuemap/>
+                    <logtimefmt/>
                 </item>
             </items>
             <discovery_rules>
@@ -1870,7 +1917,18 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>{#ASMVOLUME}:</filter>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#ASMVOLUME}</macro>
+                                <value/>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
                     <lifetime>30</lifetime>
                     <description/>
                     <item_prototypes>
@@ -1915,6 +1973,7 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -1929,6 +1988,7 @@
                         </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
+                    <host_prototypes/>
                 </discovery_rule>
                 <discovery_rule>
                     <name>Discovery Oracle tablespaces</name>
@@ -1955,7 +2015,18 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>{#TABLESPACE}:</filter>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#TABLESPACE}</macro>
+                                <value/>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
                     <lifetime>30</lifetime>
                     <description/>
                     <item_prototypes>
@@ -2000,6 +2071,7 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -2041,7 +2113,18 @@
                     <publickey/>
                     <privatekey/>
                     <port/>
-                    <filter>{#TABLESPACE_TEMP}:</filter>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#TABLESPACE_TEMP}</macro>
+                                <value/>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
                     <lifetime>30</lifetime>
                     <description/>
                     <item_prototypes>
@@ -2086,6 +2169,7 @@
                                 </application>
                             </applications>
                             <valuemap/>
+                            <logtimefmt/>
                         </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
@@ -2099,6 +2183,94 @@
                             <type>0</type>
                         </trigger_prototype>
                     </trigger_prototypes>
+                    <graph_prototypes/>
+                    <host_prototypes/>
+                </discovery_rule>
+                <discovery_rule>
+                    <name>Discovery Oracle users</name>
+                    <type>0</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},show_users]</key>
+                    <delay>3600</delay>
+                    <status>0</status>
+                    <allowed_hosts/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <filter>
+                        <evaltype>0</evaltype>
+                        <formula/>
+                        <conditions>
+                            <condition>
+                                <macro>{#DBUSER}</macro>
+                                <value/>
+                                <operator>8</operator>
+                                <formulaid>A</formulaid>
+                            </condition>
+                        </conditions>
+                    </filter>
+                    <lifetime>30</lifetime>
+                    <description/>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#DBUSER} user status</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},user_status,{#DBUSER}]</key>
+                            <delay>300</delay>
+                            <history>90</history>
+                            <trends>365</trends>
+                            <status>0</status>
+                            <value_type>4</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Database Users</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                        </item_prototype>
+                    </item_prototypes>
+                    <trigger_prototypes/>
                     <graph_prototypes/>
                     <host_prototypes/>
                 </discovery_rule>
@@ -2120,7 +2292,7 @@
             <dependencies/>
         </trigger>
         <trigger>
-		<expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_active].regexp(ORA)}=1</expression>
+            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_active].regexp(ORA)}=1</expression>
             <name>Oracle/Database {$DATABASE} is down or ORA error found</name>
             <url/>
             <status>0</status>

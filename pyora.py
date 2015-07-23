@@ -454,6 +454,26 @@ class Checks(object):
                 for i in res:
                         print i[0]
 
+        def show_users(self):
+               '''Query the list of users on the instance'''
+               sql = "SELECT username FROM dba_users ORDER BY 1"
+               self.cur.execute(sql)
+               res = self.cur.fetchall()
+               key = ['{#DBUSER}']
+               lst = []
+               for i in res:
+                       d=dict(zip(key,i))
+                       lst.append(d)
+               print json.dumps({'data': lst})
+
+        def user_status(self,dbuser):
+               '''Determines whether a user is locked or not'''
+               sql = "SELECT account_status FROM dba_users WHERE username='{0}'".format(dbuser)
+               self.cur.execute(sql)
+               res = self.cur.fetchall()
+               for i in res:
+                       print i[0]
+
 class Main(Checks):
     def __init__(self):
         parser = argparse.ArgumentParser()
