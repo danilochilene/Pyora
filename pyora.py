@@ -396,8 +396,8 @@ class Checks(object):
     def show_tablespaces_temp(self):
         """List temporary tablespace names in a JSON like
         format for Zabbix use"""
-        sql = "SELECT tablespace FROM V$TEMPSEG_USAGE group by tablespace \
-              ORDER BY 1"
+        sql = "SELECT TABLESPACE_NAME FROM DBA_TABLESPACES WHERE \
+              CONTENTS='TEMPORARY'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
         key = ['{#TABLESPACE_TEMP}']
@@ -474,10 +474,9 @@ class Checks(object):
 
     def tablespace_temp(self, name):
         """Query temporary tablespaces"""
-        sql = "SELECT round(sum(a.blocks*8192)*100/bytes,2) percentual FROM \
-              V$TEMPSEG_USAGE a, dba_temp_files b where tablespace_name= \
-              '{0}' and a.tablespace=b.tablespace_name group by \
-              a.tablespace,b.bytes".format(name)
+        sql = "SELECT round(((TABLESPACE_SIZE-FREE_SPACE)/TABLESPACE_SIZE)*100,2) \
+              PERCENTUAL FROM dba_temp_free_space where \
+              tablespace_name='{0}'".format(name)
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
