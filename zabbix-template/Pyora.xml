@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>3.0</version>
-    <date>2016-06-03T08:39:51Z</date>
+    <date>2016-06-03T08:57:42Z</date>
     <groups>
         <group>
             <name>Pyora</name>
@@ -2033,7 +2033,7 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Tablespace Use on {#TABLESPACE}</name>
+                            <name>Tablespace percentual use on {#TABLESPACE}</name>
                             <type>0</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -2076,11 +2076,55 @@
                             <logtimefmt/>
                             <application_prototypes/>
                         </item_prototype>
+                        <item_prototype>
+                            <name>Tablespace free on {#TABLESPACE}</name>
+                            <type>0</type>
+                            <snmp_community/>
+                            <multiplier>0</multiplier>
+                            <snmp_oid/>
+                            <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace_abs,{#TABLESPACE}]</key>
+                            <delay>300</delay>
+                            <history>7</history>
+                            <trends>90</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units>bytes</units>
+                            <delta>0</delta>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <formula>1</formula>
+                            <delay_flex/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <data_type>0</data_type>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>Tablespaces</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <application_prototypes/>
+                        </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace,{#TABLESPACE}].last(0)}&gt;{$HIGH}</expression>
-                            <name>Oracle/Tablespace {#TABLESPACE} used on {$DATABASE} &gt; {$HIGH} %</name>
+                            <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace,{#TABLESPACE}].last()}={$FS_P_USED_HIGH} and {Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace_abs,{#TABLESPACE}].last()}&lt;{$FS_FREE_LOW}</expression>
+                            <name>Oracle/Tablespace {#TABLESPACE} used on {$DATABASE} high</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -2089,7 +2133,52 @@
                             <dependencies/>
                         </trigger_prototype>
                     </trigger_prototypes>
-                    <graph_prototypes/>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <name>Tablespace use on {#TABLESPACE}</name>
+                            <width>900</width>
+                            <height>200</height>
+                            <yaxismin>0.0000</yaxismin>
+                            <yaxismax>100.0000</yaxismax>
+                            <show_work_period>1</show_work_period>
+                            <show_triggers>1</show_triggers>
+                            <type>0</type>
+                            <show_legend>1</show_legend>
+                            <show_3d>0</show_3d>
+                            <percent_left>0.0000</percent_left>
+                            <percent_right>0.0000</percent_right>
+                            <ymin_type_1>0</ymin_type_1>
+                            <ymax_type_1>0</ymax_type_1>
+                            <ymin_item_1>0</ymin_item_1>
+                            <ymax_item_1>0</ymax_item_1>
+                            <graph_items>
+                                <graph_item>
+                                    <sortorder>0</sortorder>
+                                    <drawtype>1</drawtype>
+                                    <color>1A7C11</color>
+                                    <yaxisside>1</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Pyora</host>
+                                        <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace_abs,{#TABLESPACE}]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>0</drawtype>
+                                    <color>F63100</color>
+                                    <yaxisside>0</yaxisside>
+                                    <calc_fnc>2</calc_fnc>
+                                    <type>0</type>
+                                    <item>
+                                        <host>Pyora</host>
+                                        <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace,{#TABLESPACE}]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
                     <host_prototypes/>
                 </discovery_rule>
                 <discovery_rule>
@@ -2282,7 +2371,20 @@
                     <host_prototypes/>
                 </discovery_rule>
             </discovery_rules>
-            <macros/>
+            <macros>
+                <macro>
+                    <macro>{$FS_FREE_LOW}</macro>
+                    <value>32</value>
+                </macro>
+                <macro>
+                    <macro>{$FS_P_USED_HIGH}</macro>
+                    <value>80</value>
+                </macro>
+                <macro>
+                    <macro>{$HIGH}</macro>
+                    <value>80</value>
+                </macro>
+            </macros>
             <templates/>
             <screens/>
         </template>
