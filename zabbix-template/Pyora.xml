@@ -128,7 +128,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>Oracle/Intance is active and open on {$DATABASE}</name>
+                    <name>Oracle/Instance is active and open on {$DATABASE}</name>
                     <type>0</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
