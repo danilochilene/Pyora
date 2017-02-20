@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>3.2</version>
+    <date>2017-02-16T17:12:43Z</date>
+    <groups>
+        <group>
+            <name>Template Stefanini</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template ITIL</template>
+            <name>Template ITIL</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>Template Stefanini</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>ITIL</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>description.trigger.problem.itil.average</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[description.trigger.problem.itil.average,ZABBIX]</key>
+                    <delay>300</delay>
+                    <history>3</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>1</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT if(qtd=0,'SEM PROBLEMA',description) as descr from (&#13;
+SELECT&#13;
+t.description,&#13;
+SUM(&#13;
+CASE&#13;
+WHEN t.priority = 3 THEN 1&#13;
+ELSE 0&#13;
+END) as qtd&#13;
+FROM zabbix.events e&#13;
+INNER JOIN zabbix.triggers t ON ( e.objectid = t.triggerid )&#13;
+INNER JOIN zabbix.functions f ON ( f.triggerid = t.triggerid )&#13;
+INNER JOIN zabbix.items i ON ( i.itemid = f.itemid )&#13;
+INNER JOIN zabbix.hosts h ON ( i.hostid = h.hostid )&#13;
+WHERE&#13;
+h.status =0&#13;
+AND i.status =0&#13;
+AND t.status =0&#13;
+AND e.value = 1&#13;
+AND e.clock &gt;= unix_timestamp(date_format(now(),'%Y-%m-01 00:00:00')) and e.clock &lt; unix_timestamp(DATE_ADD(last_day(now()), INTERVAL 1 DAY)) &#13;
+AND h.name = '{HOST.NAME}'&#13;
+group by t.triggerid&#13;
+order by qtd desc limit 1 ) as tb1</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>description.trigger.problem.itil.disaster</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[description.trigger.problem.itil.disaster,ZABBIX]</key>
+                    <delay>300</delay>
+                    <history>3</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>1</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT if(qtd=0,'SEM PROBLEMA',description) as descr from (&#13;
+SELECT&#13;
+t.description,&#13;
+SUM(&#13;
+CASE&#13;
+WHEN t.priority = 5 THEN 1&#13;
+ELSE 0&#13;
+END) as qtd&#13;
+FROM zabbix.events e&#13;
+INNER JOIN zabbix.triggers t ON ( e.objectid = t.triggerid )&#13;
+INNER JOIN zabbix.functions f ON ( f.triggerid = t.triggerid )&#13;
+INNER JOIN zabbix.items i ON ( i.itemid = f.itemid )&#13;
+INNER JOIN zabbix.hosts h ON ( i.hostid = h.hostid )&#13;
+WHERE&#13;
+h.status =0&#13;
+AND i.status =0&#13;
+AND t.status =0&#13;
+AND e.value = 1&#13;
+AND e.clock &gt;= unix_timestamp(date_format(now(),'%Y-%m-01 00:00:00')) and e.clock &lt; unix_timestamp(DATE_ADD(last_day(now()), INTERVAL 1 DAY)) &#13;
+AND h.name = '{HOST.NAME}'&#13;
+group by t.triggerid&#13;
+order by qtd desc limit 1 ) as tb1</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>description.trigger.problem.itil.high</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[description.trigger.problem.itil.high,ZABBIX]</key>
+                    <delay>300</delay>
+                    <history>3</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>1</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT if(qtd=0,'SEM PROBLEMA',description) as descr from (&#13;
+SELECT&#13;
+t.description,&#13;
+SUM(&#13;
+CASE&#13;
+WHEN t.priority = 4 THEN 1&#13;
+ELSE 0&#13;
+END) as qtd&#13;
+FROM zabbix.events e&#13;
+INNER JOIN zabbix.triggers t ON ( e.objectid = t.triggerid )&#13;
+INNER JOIN zabbix.functions f ON ( f.triggerid = t.triggerid )&#13;
+INNER JOIN zabbix.items i ON ( i.itemid = f.itemid )&#13;
+INNER JOIN zabbix.hosts h ON ( i.hostid = h.hostid )&#13;
+WHERE&#13;
+h.status =0&#13;
+AND i.status =0&#13;
+AND t.status =0&#13;
+AND e.value = 1&#13;
+AND e.clock &gt;= unix_timestamp(date_format(now(),'%Y-%m-01 00:00:00')) and e.clock &lt; unix_timestamp(DATE_ADD(last_day(now()), INTERVAL 1 DAY)) &#13;
+AND h.name = '{HOST.NAME}'&#13;
+group by t.triggerid&#13;
+order by qtd desc limit 1 ) as tb1</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>qtd.trigger.active.disaster</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[qtd.trigger.active.disaster,ZABBIX]</key>
+                    <delay>60</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT if(COUNT(t1.triggerid)&gt;0,1,0) as qtd&#13;
+FROM triggers t1&#13;
+INNER JOIN functions t2 on ( t1.triggerid = t2.triggerid )&#13;
+INNER JOIN items t3 on ( t3.itemid = t2.itemid )&#13;
+INNER JOIN hosts t4 on (t3.hostid = t4.hostid )&#13;
+WHERE t1.status = 0&#13;
+AND t1.value = 1&#13;
+AND t1.priority = 5&#13;
+AND t4.name = '{HOST.HOST}'</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>qtd.trigger.active.high</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[qtd.trigger.active.high,ZABBIX]</key>
+                    <delay>60</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT if(COUNT(t1.triggerid)&gt;0,1,0) as qtd&#13;
+FROM triggers t1&#13;
+INNER JOIN functions t2 on ( t1.triggerid = t2.triggerid )&#13;
+INNER JOIN items t3 on ( t3.itemid = t2.itemid )&#13;
+INNER JOIN hosts t4 on (t3.hostid = t4.hostid )&#13;
+WHERE t1.status = 0&#13;
+AND t1.value = 1&#13;
+AND t1.priority = 4&#13;
+AND t4.name = '{HOST.HOST}'</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>qtd.trigger.problem.itil.average</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[qtd.trigger.problem.itil.average,ZABBIX]</key>
+                    <delay>300</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT&#13;
+&#13;
+SUM(&#13;
+CASE&#13;
+WHEN t.priority = 3 THEN 1&#13;
+ELSE 0&#13;
+END) as qtd&#13;
+&#13;
+FROM zabbix.events e&#13;
+INNER JOIN zabbix.triggers t ON ( e.objectid = t.triggerid )&#13;
+INNER JOIN zabbix.functions f ON ( f.triggerid = t.triggerid )&#13;
+INNER JOIN zabbix.items i ON ( i.itemid = f.itemid )&#13;
+INNER JOIN zabbix.hosts h ON ( i.hostid = h.hostid )&#13;
+WHERE&#13;
+h.status =0&#13;
+AND i.status =0&#13;
+AND t.status =0&#13;
+AND e.value = 1&#13;
+AND e.clock &gt;= unix_timestamp(date_format(now(),'%Y-%m-01 00:00:00')) and e.clock &lt; unix_timestamp(DATE_ADD(last_day(now()), INTERVAL 1 DAY)) &#13;
+AND h.name = '{HOST.NAME}'&#13;
+group by t.triggerid&#13;
+order by qtd desc limit 1</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>qtd.trigger.problem.itil.disaster</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[qtd.trigger.problem.itil.disaster,ZABBIX]</key>
+                    <delay>300</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT&#13;
+&#13;
+SUM(&#13;
+CASE&#13;
+WHEN t.priority = 5 THEN 1&#13;
+ELSE 0&#13;
+END) as qtd&#13;
+&#13;
+FROM zabbix.events e&#13;
+INNER JOIN zabbix.triggers t ON ( e.objectid = t.triggerid )&#13;
+INNER JOIN zabbix.functions f ON ( f.triggerid = t.triggerid )&#13;
+INNER JOIN zabbix.items i ON ( i.itemid = f.itemid )&#13;
+INNER JOIN zabbix.hosts h ON ( i.hostid = h.hostid )&#13;
+WHERE&#13;
+h.status =0&#13;
+AND i.status =0&#13;
+AND t.status =0&#13;
+AND e.value = 1&#13;
+AND e.clock &gt;= unix_timestamp(date_format(now(),'%Y-%m-01 00:00:00')) and e.clock &lt; unix_timestamp(DATE_ADD(last_day(now()), INTERVAL 1 DAY)) &#13;
+AND h.name = '{HOST.NAME}'&#13;
+group by t.triggerid&#13;
+order by qtd desc limit 1</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>qtd.trigger.problem.itil.high</name>
+                    <type>11</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>db.odbc.select[qtd.trigger.problem.itil.high,ZABBIX]</key>
+                    <delay>300</delay>
+                    <history>90</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params>SELECT&#13;
+&#13;
+SUM(&#13;
+CASE&#13;
+WHEN t.priority = 4 THEN 1&#13;
+ELSE 0&#13;
+END) as qtd&#13;
+&#13;
+FROM zabbix.events e&#13;
+INNER JOIN zabbix.triggers t ON ( e.objectid = t.triggerid )&#13;
+INNER JOIN zabbix.functions f ON ( f.triggerid = t.triggerid )&#13;
+INNER JOIN zabbix.items i ON ( i.itemid = f.itemid )&#13;
+INNER JOIN zabbix.hosts h ON ( i.hostid = h.hostid )&#13;
+WHERE&#13;
+h.status =0&#13;
+AND i.status =0&#13;
+AND t.status =0&#13;
+AND e.value = 1&#13;
+AND e.clock &gt;= unix_timestamp(date_format(now(),'%Y-%m-01 00:00:00')) and e.clock &lt; unix_timestamp(DATE_ADD(last_day(now()), INTERVAL 1 DAY)) &#13;
+AND h.name = '{HOST.NAME}'&#13;
+group by t.triggerid&#13;
+order by qtd desc limit 1</params>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>ITIL</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template ITIL:db.odbc.select[qtd.trigger.problem.itil.disaster,ZABBIX].last()}&gt;{$PROBLEM_DISASTER}</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Disponibilidade - Identificado possivel gestao de problema</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>1</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+        <trigger>
+            <expression>{Template ITIL:db.odbc.select[qtd.trigger.problem.itil.high,ZABBIX].last()}&gt;{$PROBLEM_HIGH}</expression>
+            <recovery_mode>0</recovery_mode>
+            <recovery_expression/>
+            <name>Performance - Identificado possivel gestao de problema</name>
+            <correlation_mode>0</correlation_mode>
+            <correlation_tag/>
+            <url/>
+            <status>0</status>
+            <priority>0</priority>
+            <description/>
+            <type>0</type>
+            <manual_close>0</manual_close>
+            <dependencies/>
+            <tags/>
+        </trigger>
+    </triggers>
+</zabbix_export>

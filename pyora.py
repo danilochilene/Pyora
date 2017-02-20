@@ -370,13 +370,12 @@ class Checks(object):
 
     def tablespace(self, name):
         """Get tablespace usage"""
-        sql='''SELECT  tablespace_name,
-        100-(TRUNC((max_free_mb/max_size_mb) * 100)) AS USED
-        FROM ( SELECT a.tablespace_name,b.size_mb,a.free_mb,b.max_size_mb,a.free_mb + (b.max_size_mb - b.size_mb) AS max_free_mb
-        FROM   (SELECT tablespace_name,TRUNC(SUM(bytes)/1024/1024) AS free_mb FROM dba_free_space GROUP BY tablespace_name) a,
-        (SELECT tablespace_name,TRUNC(SUM(bytes)/1024/1024) AS size_mb,TRUNC(SUM(GREATEST(bytes,maxbytes))/1024/1024) AS max_size_mb
-        FROM   dba_data_files GROUP BY tablespace_name) b WHERE  a.tablespace_name = b.tablespace_name
-        ) where tablespace_name='{0}' order by 1'''.format(name)
+        sql = '''SELECT df.tablespace_name "TABLESPACE", ROUND ( (df.bytes - \
+              SUM (fs.bytes)) * 100 / df.bytes, 2) "USED" FROM   \
+              sys.sm$ts_free fs, (  SELECT tablespace_name, SUM (bytes) \
+              bytes FROM sys.sm$ts_avail GROUP BY tablespace_name) df WHERE \
+              fs.tablespace_name(+) = df.tablespace_name and df.tablespace_name \
+              = '{0}' GROUP BY df.tablespace_name, df.bytes ORDER BY 1'''.format(name)
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
@@ -530,6 +529,15 @@ class Checks(object):
         """Determines whether a user is locked or not"""
         sql = "SELECT account_status FROM dba_users WHERE username='{0}'" \
             .format(dbuser)
+        self.cur.execute(sql)
+        res = self.cur.fetchall()
+        for i in res:
+            print i[0]
+ 
+    def mviews_status(self,mvowner,mvtablespace):
+        """check status from materialized view"""
+        sql = "SELECT compile_state FROM all_mviews WHERE owner='{0}' and mview_name='{1}'" \
+            .format(mvowner,mvtablespace) 
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
