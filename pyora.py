@@ -579,8 +579,9 @@ class Main(Checks):
             finally:
                 self.db_close()
         except Exception, err:
-            print 0
-            print str(err)
+            #print 0
+            #print str(err)
+						pass
 
 if __name__ == "__main__":
     main = Main()
