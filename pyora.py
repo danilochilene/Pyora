@@ -16,7 +16,6 @@ version = 0.2
 
 
 class Checks(object):
-
     def check_active(self):
         """Check Intance is active and open"""
         sql = "select to_char(case when inst_cnt > 0 then 1 else 0 end, \
@@ -370,7 +369,7 @@ class Checks(object):
 
     def tablespace(self, name):
         """Get tablespace usage"""
-        sql='''SELECT  tablespace_name,
+        sql = '''SELECT  tablespace_name,
         100-(TRUNC((max_free_mb/max_size_mb) * 100)) AS USED
         FROM ( SELECT a.tablespace_name,b.size_mb,a.free_mb,b.max_size_mb,a.free_mb + (b.max_size_mb - b.size_mb) AS max_free_mb
         FROM   (SELECT tablespace_name,TRUNC(SUM(bytes)/1024/1024) AS free_mb FROM dba_free_space GROUP BY tablespace_name) a,
@@ -567,6 +566,7 @@ class Main(Checks):
         self.cur = self.db.cursor()
 
     def db_close(self):
+        self.cur.close()
         self.db.close()
 
     def __call__(self):
@@ -579,9 +579,9 @@ class Main(Checks):
             finally:
                 self.db_close()
         except Exception, err:
-            #print 0
-            #print str(err)
-						pass
+            print 0
+            print str(err)
+
 
 if __name__ == "__main__":
     main = Main()
