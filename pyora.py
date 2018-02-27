@@ -542,6 +542,7 @@ class Main(Checks):
         parser.add_argument('--password')
         parser.add_argument('--address')
         parser.add_argument('--database')
+        parser.add_argument('--port')
 
         subparsers = parser.add_subparsers()
 
@@ -561,8 +562,9 @@ class Main(Checks):
         password = a.password
         address = a.address
         database = a.database
-        self.db = cx_Oracle.connect("{0}/{1}@{2}/{3}".format(
-            username, password, address, database))
+        port = a.port
+        self.db = cx_Oracle.connect("{0}/{1}@{2}:{3}/{4}".format(
+            username, password, address, port, database))
         self.cur = self.db.cursor()
 
     def db_close(self):

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
-    <version>3.0</version>
-    <date>2016-06-03T08:57:42Z</date>
+    <version>2.0</version>
+    <date>2018-02-25T19:40:20Z</date>
     <groups>
         <group>
             <name>Pyora</name>
@@ -14,7 +14,7 @@
         <template>
             <template>Pyora</template>
             <name>Template App Oracle</name>
-            <description/>
+            <description />
             <groups>
                 <group>
                     <name>Pyora</name>
@@ -44,2094 +44,2089 @@
                 <item>
                     <name>Oracle/Active user count on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},activeusercount]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Buffer busy waits on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},bufbusywaits]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Instance is active and open on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},check_active]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>0</trends>
                     <status>0</status>
                     <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Archive {$ARCHIVE} on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},check_archive,{$ARCHIVE}]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>%</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/User Commits on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},commits]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Size of all datafiles on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},dbfilesize]</key>
                     <delay>7200</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>B</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/dbprllwrite on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},dbprllwrite]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>3</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/dbscattread on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},dbscattread]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/dbseqread on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},dbseqread]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>3</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Size of user data (without temp) on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},dbsize]</key>
                     <delay>7200</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>B</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/dbsnglwrite {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},dbsnglwrite]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Deadlocks on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},deadlocks]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Directread on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},directread]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Disk sorts ratio on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},dsksortratio]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>0</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>%</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Enqueue on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},enqueue]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/fra_use on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},fra_use]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/freebufwaits on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},freebufwaits]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Hard parse ratio on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},hparsratio]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>0</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>%</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Index fast full scans (full) on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},indexffs]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Lastapplarclog on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},lastapplarclog]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Lastarclog on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},lastarclog]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>3</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Latchfree on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},latchfree]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Logfilesync on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},logfilesync]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Logonscurrent on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},logonscurrent]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Logprllwrite on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},logprllwrite]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Logswcompletion on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},logswcompletion]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Netresv on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},netresv]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>b</units>
                     <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Netroundtrips on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},netroundtrips]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Netsent on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},netsent]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Query Lock on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_lock]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Query Redologs on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_redologs]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Query Rollbacks on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_rollbacks]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Query Sessions on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_sessions]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Database CPU Time Ratio on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_sysmetrics,Database_CPU_Time_Ratio]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>0</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>%</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Database Wait Time Ratio on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_sysmetrics,Database_Wait_Time_Ratio]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>0</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>%</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/User Transaction Per Sec on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_sysmetrics,User_Transaction_Per_Sec]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>0</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Query Temp on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},query_temp]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Read Cache hit ratio on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},rcachehit]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>0</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>%</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Redo Writes on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},redowrites]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Table scan rows gotten on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},tblrowsscans]</key>
                     <delay>300</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Table scans (long tables) on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},tblscans]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>1</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Uptime on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},uptime]</key>
                     <delay>600</delay>
                     <history>7</history>
                     <trends>90</trends>
                     <status>0</status>
                     <value_type>3</value_type>
-                    <allowed_hosts/>
+                    <allowed_hosts />
                     <units>s</units>
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
                 <item>
                     <name>Oracle/Version on {$DATABASE}</name>
                     <type>0</type>
-                    <snmp_community/>
+                    <snmp_community />
                     <multiplier>0</multiplier>
-                    <snmp_oid/>
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},version]</key>
                     <delay>7200</delay>
                     <history>90</history>
                     <trends>0</trends>
                     <status>0</status>
                     <value_type>1</value_type>
-                    <allowed_hosts/>
-                    <units/>
+                    <allowed_hosts />
+                    <units />
                     <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
+                    <snmpv3_privpassphrase />
                     <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <data_type>0</data_type>
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
+                    <description />
                     <inventory_link>0</inventory_link>
                     <applications>
                         <application>
                             <name>Oracle</name>
                         </application>
                     </applications>
-                    <valuemap/>
-                    <logtimefmt/>
+                    <valuemap />
+                    <logtimefmt />
                 </item>
             </items>
             <discovery_rules>
                 <discovery_rule>
                     <name>Discovery Oracle ASM volumes</name>
                     <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <snmp_community />
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},show_asm_volumes]</key>
                     <delay>3600</delay>
                     <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <allowed_hosts />
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <snmpv3_privpassphrase />
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
                     <filter>
                         <evaltype>0</evaltype>
-                        <formula/>
+                        <formula />
                         <conditions>
                             <condition>
                                 <macro>{#ASMVOLUME}</macro>
-                                <value/>
+                                <value />
                                 <operator>8</operator>
                                 <formulaid>A</formulaid>
                             </condition>
                         </conditions>
                     </filter>
                     <lifetime>30</lifetime>
-                    <description/>
+                    <description />
                     <item_prototypes>
                         <item_prototype>
                             <name>ASM Volume Use on {#ASMVOLUME}</name>
                             <type>0</type>
-                            <snmp_community/>
+                            <snmp_community />
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
+                            <snmp_oid />
                             <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},asm_volume_use,{#ASMVOLUME}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
                             <status>0</status>
                             <value_type>0</value_type>
-                            <allowed_hosts/>
+                            <allowed_hosts />
                             <units>%</units>
                             <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
+                            <snmpv3_contextname />
+                            <snmpv3_securityname />
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
                             <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
+                            <snmpv3_authpassphrase />
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
+                            <snmpv3_privpassphrase />
                             <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
+                            <delay_flex />
+                            <params />
+                            <ipmi_sensor />
                             <data_type>0</data_type>
                             <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
+                            <username />
+                            <password />
+                            <publickey />
+                            <privatekey />
+                            <port />
+                            <description />
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>ASM Volumes</name>
                                 </application>
                             </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
+                            <valuemap />
+                            <logtimefmt />
+                            </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},asm_volume_use,{#ASMVOLUME}].last(0)}&gt;{$HIGH}</expression>
                             <name>Oracle/ASM Volume {#ASMVOLUME} used &gt; {$HIGH} %</name>
-                            <url/>
+                            <url />
                             <status>0</status>
                             <priority>4</priority>
-                            <description/>
+                            <description />
                             <type>0</type>
-                            <dependencies/>
-                        </trigger_prototype>
+                            </trigger_prototype>
                     </trigger_prototypes>
-                    <graph_prototypes/>
-                    <host_prototypes/>
+                    <graph_prototypes />
+                    <host_prototypes />
                 </discovery_rule>
                 <discovery_rule>
                     <name>Discovery Oracle tablespaces</name>
                     <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <snmp_community />
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},show_tablespaces]</key>
                     <delay>3600</delay>
                     <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <allowed_hosts />
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <snmpv3_privpassphrase />
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
                     <filter>
                         <evaltype>0</evaltype>
-                        <formula/>
+                        <formula />
                         <conditions>
                             <condition>
                                 <macro>{#TABLESPACE}</macro>
-                                <value/>
+                                <value />
                                 <operator>8</operator>
                                 <formulaid>A</formulaid>
                             </condition>
                         </conditions>
                     </filter>
                     <lifetime>30</lifetime>
-                    <description/>
+                    <description />
                     <item_prototypes>
                         <item_prototype>
                             <name>Tablespace percentual use on {#TABLESPACE}</name>
                             <type>0</type>
-                            <snmp_community/>
+                            <snmp_community />
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
+                            <snmp_oid />
                             <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},tablespace,{#TABLESPACE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
                             <status>0</status>
                             <value_type>0</value_type>
-                            <allowed_hosts/>
+                            <allowed_hosts />
                             <units>%</units>
                             <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
+                            <snmpv3_contextname />
+                            <snmpv3_securityname />
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
                             <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
+                            <snmpv3_authpassphrase />
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
+                            <snmpv3_privpassphrase />
                             <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
+                            <delay_flex />
+                            <params />
+                            <ipmi_sensor />
                             <data_type>0</data_type>
                             <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
+                            <username />
+                            <password />
+                            <publickey />
+                            <privatekey />
+                            <port />
+                            <description />
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Tablespaces</name>
                                 </application>
                             </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
+                            <valuemap />
+                            <logtimefmt />
+                            </item_prototype>
                         <item_prototype>
                             <name>Tablespace free on {#TABLESPACE}</name>
                             <type>0</type>
-                            <snmp_community/>
+                            <snmp_community />
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
+                            <snmp_oid />
                             <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},tablespace_abs,{#TABLESPACE}]</key>
                             <delay>300</delay>
                             <history>7</history>
                             <trends>90</trends>
                             <status>0</status>
                             <value_type>3</value_type>
-                            <allowed_hosts/>
+                            <allowed_hosts />
                             <units>bytes</units>
                             <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
+                            <snmpv3_contextname />
+                            <snmpv3_securityname />
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
                             <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
+                            <snmpv3_authpassphrase />
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
+                            <snmpv3_privpassphrase />
                             <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
+                            <delay_flex />
+                            <params />
+                            <ipmi_sensor />
                             <data_type>0</data_type>
                             <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
+                            <username />
+                            <password />
+                            <publickey />
+                            <privatekey />
+                            <port />
+                            <description />
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Tablespaces</name>
                                 </application>
                             </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
+                            <valuemap />
+                            <logtimefmt />
+                            </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace,{#TABLESPACE}].last()}={$FS_P_USED_HIGH} and {Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace_abs,{#TABLESPACE}].last()}&lt;{$FS_FREE_LOW}</expression>
                             <name>Oracle/Tablespace {#TABLESPACE} used on {$DATABASE} high</name>
-                            <url/>
+                            <url />
                             <status>0</status>
                             <priority>4</priority>
-                            <description/>
+                            <description />
                             <type>0</type>
-                            <dependencies/>
-                        </trigger_prototype>
+                            </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
@@ -2179,196 +2174,193 @@
                             </graph_items>
                         </graph_prototype>
                     </graph_prototypes>
-                    <host_prototypes/>
+                    <host_prototypes />
                 </discovery_rule>
                 <discovery_rule>
                     <name>Discovery Oracle temp tablespaces</name>
                     <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <snmp_community />
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},show_tablespaces_temp]</key>
                     <delay>3600</delay>
                     <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <allowed_hosts />
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <snmpv3_privpassphrase />
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
                     <filter>
                         <evaltype>0</evaltype>
-                        <formula/>
+                        <formula />
                         <conditions>
                             <condition>
                                 <macro>{#TABLESPACE_TEMP}</macro>
-                                <value/>
+                                <value />
                                 <operator>8</operator>
                                 <formulaid>A</formulaid>
                             </condition>
                         </conditions>
                     </filter>
                     <lifetime>30</lifetime>
-                    <description/>
+                    <description />
                     <item_prototypes>
                         <item_prototype>
                             <name>Temp Tablespace Use on {#TABLESPACE_TEMP}</name>
                             <type>0</type>
-                            <snmp_community/>
+                            <snmp_community />
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
+                            <snmp_oid />
                             <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},tablespace_temp,{#TABLESPACE_TEMP}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>365</trends>
                             <status>0</status>
                             <value_type>0</value_type>
-                            <allowed_hosts/>
+                            <allowed_hosts />
                             <units>%</units>
                             <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
+                            <snmpv3_contextname />
+                            <snmpv3_securityname />
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
                             <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
+                            <snmpv3_authpassphrase />
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
+                            <snmpv3_privpassphrase />
                             <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
+                            <delay_flex />
+                            <params />
+                            <ipmi_sensor />
                             <data_type>0</data_type>
                             <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
+                            <username />
+                            <password />
+                            <publickey />
+                            <privatekey />
+                            <port />
+                            <description />
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Temp Tablespaces</name>
                                 </application>
                             </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
+                            <valuemap />
+                            <logtimefmt />
+                            </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},tablespace_temp,{#TABLESPACE_TEMP}].last(0)}&gt;{$HIGH}</expression>
                             <name>Oracle/Tablespace TEMP {#TABLESPACE_TEMP} used on {$DATABASE} &gt; {$HIGH} %</name>
-                            <url/>
+                            <url />
                             <status>0</status>
                             <priority>4</priority>
-                            <description/>
+                            <description />
                             <type>0</type>
-                            <dependencies/>
-                        </trigger_prototype>
+                            </trigger_prototype>
                     </trigger_prototypes>
-                    <graph_prototypes/>
-                    <host_prototypes/>
+                    <graph_prototypes />
+                    <host_prototypes />
                 </discovery_rule>
                 <discovery_rule>
                     <name>Discovery Oracle users</name>
                     <type>0</type>
-                    <snmp_community/>
-                    <snmp_oid/>
+                    <snmp_community />
+                    <snmp_oid />
                     <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},show_users]</key>
                     <delay>3600</delay>
                     <status>0</status>
-                    <allowed_hosts/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
+                    <allowed_hosts />
+                    <snmpv3_contextname />
+                    <snmpv3_securityname />
                     <snmpv3_securitylevel>0</snmpv3_securitylevel>
                     <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
+                    <snmpv3_authpassphrase />
                     <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
+                    <snmpv3_privpassphrase />
+                    <delay_flex />
+                    <params />
+                    <ipmi_sensor />
                     <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
+                    <username />
+                    <password />
+                    <publickey />
+                    <privatekey />
+                    <port />
                     <filter>
                         <evaltype>0</evaltype>
-                        <formula/>
+                        <formula />
                         <conditions>
                             <condition>
                                 <macro>{#DBUSER}</macro>
-                                <value/>
+                                <value />
                                 <operator>8</operator>
                                 <formulaid>A</formulaid>
                             </condition>
                         </conditions>
                     </filter>
                     <lifetime>30</lifetime>
-                    <description/>
+                    <description />
                     <item_prototypes>
                         <item_prototype>
                             <name>{#DBUSER} user status</name>
                             <type>0</type>
-                            <snmp_community/>
+                            <snmp_community />
                             <multiplier>0</multiplier>
-                            <snmp_oid/>
+                            <snmp_oid />
                             <key>pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$PORT},{$DATABASE},user_status,{#DBUSER}]</key>
                             <delay>300</delay>
                             <history>90</history>
                             <trends>0</trends>
                             <status>0</status>
                             <value_type>4</value_type>
-                            <allowed_hosts/>
-                            <units/>
+                            <allowed_hosts />
+                            <units />
                             <delta>0</delta>
-                            <snmpv3_contextname/>
-                            <snmpv3_securityname/>
+                            <snmpv3_contextname />
+                            <snmpv3_securityname />
                             <snmpv3_securitylevel>0</snmpv3_securitylevel>
                             <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                            <snmpv3_authpassphrase/>
+                            <snmpv3_authpassphrase />
                             <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                            <snmpv3_privpassphrase/>
+                            <snmpv3_privpassphrase />
                             <formula>1</formula>
-                            <delay_flex/>
-                            <params/>
-                            <ipmi_sensor/>
+                            <delay_flex />
+                            <params />
+                            <ipmi_sensor />
                             <data_type>0</data_type>
                             <authtype>0</authtype>
-                            <username/>
-                            <password/>
-                            <publickey/>
-                            <privatekey/>
-                            <port/>
-                            <description/>
+                            <username />
+                            <password />
+                            <publickey />
+                            <privatekey />
+                            <port />
+                            <description />
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
                                     <name>Database Users</name>
                                 </application>
                             </applications>
-                            <valuemap/>
-                            <logtimefmt/>
-                            <application_prototypes/>
-                        </item_prototype>
+                            <valuemap />
+                            <logtimefmt />
+                            </item_prototype>
                     </item_prototypes>
-                    <trigger_prototypes/>
-                    <graph_prototypes/>
-                    <host_prototypes/>
+                    <trigger_prototypes />
+                    <graph_prototypes />
+                    <host_prototypes />
                 </discovery_rule>
             </discovery_rules>
             <macros>
@@ -2385,70 +2377,70 @@
                     <value>80</value>
                 </macro>
             </macros>
-            <templates/>
-            <screens/>
+            <templates />
+            <screens />
         </template>
     </templates>
     <triggers>
         <trigger>
             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_archive,{$ARCHIVE}].last(0)}&gt;90</expression>
             <name>Oracle/Archive {$ARCHIVE} used on {$DATABASE} &gt; 90%</name>
-            <url/>
+            <url />
             <status>0</status>
             <priority>3</priority>
             <description>Database archive used is &gt; 90%</description>
             <type>0</type>
-            <dependencies/>
+            <dependencies />
         </trigger>
         <trigger>
             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_active].regexp(ORA)}=1</expression>
             <name>Oracle/Database {$DATABASE} is down or ORA error found</name>
-            <url/>
+            <url />
             <status>0</status>
             <priority>5</priority>
             <description>Contact DBA.</description>
             <type>0</type>
-            <dependencies/>
+            <dependencies />
         </trigger>
         <trigger>
             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},check_active].nodata(700)}=1</expression>
             <name>Oracle/Database {$DATABASE} is not responding</name>
-            <url/>
+            <url />
             <status>0</status>
             <priority>5</priority>
             <description>Contact DBA.</description>
             <type>0</type>
-            <dependencies/>
+            <dependencies />
         </trigger>
         <trigger>
             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},fra_use].last(0)}&gt;90</expression>
             <name>Oracle/fra_use used on {$DATABASE} &gt; 90%</name>
-            <url/>
+            <url />
             <status>0</status>
             <priority>4</priority>
             <description>Fast Recovery Area usage &gt; 90%</description>
             <type>0</type>
-            <dependencies/>
+            <dependencies />
         </trigger>
         <trigger>
             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},query_lock].last(0)}&gt;0</expression>
             <name>Oracle/Query Lock on {$DATABASE} &gt; 1</name>
-            <url/>
+            <url />
             <status>0</status>
             <priority>4</priority>
-            <description/>
+            <description />
             <type>0</type>
-            <dependencies/>
+            <dependencies />
         </trigger>
         <trigger>
             <expression>{Pyora:pyora[{$USERNAME},{$PASSWORD},{$ADDRESS},{$DATABASE},query_sessions].last(0)}&gt;250</expression>
             <name>Oracle/Query Sessions on {$DATABASE} &gt; 250</name>
-            <url/>
+            <url />
             <status>0</status>
             <priority>4</priority>
-            <description/>
+            <description />
             <type>0</type>
-            <dependencies/>
+            <dependencies />
         </trigger>
     </triggers>
     <graphs>
