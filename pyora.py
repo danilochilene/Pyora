@@ -29,8 +29,8 @@ class Checks(object):
 
     def rcachehit(self):
         """Read Cache hit ratio"""
-        sql = "SELECT to_char((1 - (phy.value - lob.value - dir.value) / \
-              ses.value) * 100, 'FM99999990.9999') retvalue \
+        sql = "SELECT nvl(to_char((1 - (phy.value - lob.value - dir.value) / \
+              ses.value) * 100, 'FM99999990.9999'), '0') retvalue \
               FROM   v$sysstat ses, v$sysstat lob, \
               v$sysstat dir, v$sysstat phy \
               WHERE  ses.name = 'session logical reads' \
@@ -44,8 +44,8 @@ class Checks(object):
 
     def dsksortratio(self):
         """Disk sorts ratio"""
-        sql = "SELECT to_char(d.value/(d.value + m.value)*100, \
-              'FM99999990.9999') retvalue \
+        sql = "SELECT nvl(to_char(d.value/(d.value + m.value)*100, \
+              'FM99999990.9999'), '0') retvalue \
               FROM  v$sysstat m, v$sysstat d \
               WHERE m.name = 'sorts (memory)' \
               AND d.name = 'sorts (disk)'"
@@ -110,7 +110,7 @@ class Checks(object):
 
     def commits(self):
         """User Commits"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'user commits'"
         self.cur.execute(sql)
         res = self.cur.fetchmany(numRows=3)
@@ -119,7 +119,7 @@ class Checks(object):
 
     def rollbacks(self):
         """User Rollbacks"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from " \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from " \
               "v$sysstat where name = 'user rollbacks'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -128,7 +128,7 @@ class Checks(object):
 
     def deadlocks(self):
         """Deadlocks"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'enqueue deadlocks'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -137,7 +137,7 @@ class Checks(object):
 
     def redowrites(self):
         """Redo Writes"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'redo writes'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -146,7 +146,7 @@ class Checks(object):
 
     def tblscans(self):
         """Table scans (long tables)"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'table scans (long tables)'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -155,7 +155,7 @@ class Checks(object):
 
     def tblrowsscans(self):
         """Table scan rows gotten"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'table scan rows gotten'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -164,7 +164,7 @@ class Checks(object):
 
     def indexffs(self):
         """Index fast full scans (full)"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'index fast full scans (full)'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -173,7 +173,7 @@ class Checks(object):
 
     def hparsratio(self):
         """Hard parse ratio"""
-        sql = "SELECT to_char(h.value/t.value*100,'FM99999990.9999') \
+        sql = "SELECT nvl(to_char(h.value/t.value*100,'FM99999990.9999'), '0') \
               retvalue FROM  v$sysstat h, v$sysstat t WHERE h.name = 'parse \
               count (hard)' AND t.name = 'parse count (total)'"
         self.cur.execute(sql)
@@ -183,7 +183,7 @@ class Checks(object):
 
     def netsent(self):
         """Bytes sent via SQL*Net to client"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'bytes sent via SQL*Net to client'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -192,7 +192,7 @@ class Checks(object):
 
     def netresv(self):
         """Bytes received via SQL*Net from client"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'bytes received via SQL*Net from client'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -201,7 +201,7 @@ class Checks(object):
 
     def netroundtrips(self):
         """SQL*Net roundtrips to/from client"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'SQL*Net roundtrips to/from client'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -210,7 +210,7 @@ class Checks(object):
 
     def logonscurrent(self):
         """Logons current"""
-        sql = "select to_char(value, 'FM99999999999999990') retvalue from \
+        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from \
               v$sysstat where name = 'logons current'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
@@ -239,7 +239,7 @@ class Checks(object):
 
     def freebufwaits(self):
         """Free buffer waits"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en \
               where se.event(+) = en.name and en.name = 'free buffer waits'"
         self.cur.execute(sql)
@@ -249,7 +249,7 @@ class Checks(object):
 
     def bufbusywaits(self):
         """Buffer busy waits"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) = \
               en.name and en.name = 'buffer busy waits'"
         self.cur.execute(sql)
@@ -259,7 +259,7 @@ class Checks(object):
 
     def logswcompletion(self):
         """log file switch completion"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'log file switch completion'"
         self.cur.execute(sql)
@@ -269,7 +269,7 @@ class Checks(object):
 
     def logfilesync(self):
         """Log file sync"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en \
               where se.event(+) = en.name and en.name = 'log file sync'"
         self.cur.execute(sql)
@@ -279,7 +279,7 @@ class Checks(object):
 
     def logprllwrite(self):
         """Log file parallel write"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'log file parallel write'"
         self.cur.execute(sql)
@@ -289,7 +289,7 @@ class Checks(object):
 
     def enqueue(self):
         """Enqueue waits"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en \
               where se.event(+) = en.name and en.name = 'enqueue'"
         self.cur.execute(sql)
@@ -299,7 +299,7 @@ class Checks(object):
 
     def dbseqread(self):
         """DB file sequential read waits"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'db file sequential read'"
         self.cur.execute(sql)
@@ -309,7 +309,7 @@ class Checks(object):
 
     def dbscattread(self):
         """DB file scattered read"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'db file scattered read'"
         self.cur.execute(sql)
@@ -319,7 +319,7 @@ class Checks(object):
 
     def dbsnglwrite(self):
         """DB file single write"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'db file single write'"
         self.cur.execute(sql)
@@ -329,7 +329,7 @@ class Checks(object):
 
     def dbprllwrite(self):
         """DB file parallel write"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'db file parallel write'"
         self.cur.execute(sql)
@@ -339,7 +339,7 @@ class Checks(object):
 
     def directread(self):
         """Direct path read"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'direct path read'"
         self.cur.execute(sql)
@@ -349,7 +349,7 @@ class Checks(object):
 
     def directwrite(self):
         """Direct path write"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'direct path write'"
         self.cur.execute(sql)
@@ -359,7 +359,7 @@ class Checks(object):
 
     def latchfree(self):
         """latch free"""
-        sql = "select to_char(time_waited, 'FM99999999999999990') retvalue \
+        sql = "select nvl(to_char(time_waited, 'FM99999999999999990'), '0') retvalue \
               from v$system_event se, v$event_name en where se.event(+) \
               = en.name and en.name = 'latch free'"
         self.cur.execute(sql)
