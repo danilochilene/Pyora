@@ -560,9 +560,9 @@ class Main(Checks):
         a = self.args
         username = a.username
         password = a.password
-        address = a.address
-        database = a.database
-        port = a.port
+        address = a.address if a.address else '127.0.0.1'
+        database = a.database if a.database else 'orcl'
+        port = a.port if a.port else 1521
         self.db = cx_Oracle.connect("{0}/{1}@{2}:{3}/{4}".format(
             username, password, address, port, database))
         self.cur = self.db.cursor()
