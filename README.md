@@ -3,6 +3,8 @@ Pyora
 
 Python script to monitor oracle
 
+**Python 2 branch**
+
 Requirements
 =====
 cx-Oracle==5.1.2
