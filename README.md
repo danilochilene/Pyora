@@ -5,13 +5,13 @@ Python script to monitor oracle
 
 Requirements
 =====
-cx-Oracle==5.1.2
+cx-Oracle==8.2.1
 
 python-argparse
 
 Note:Try installing python-argparse: `easy_install argparse`  or  `yum install python-argarse` on RHEL/Centos.
 
-Tested with python 2.6 and 2.7
+Tested with python 3.8, should work with any 3.x version. For Python2 version check python2 branch.
 
 Create Oracle user for Pyora usage
 =====
@@ -34,7 +34,7 @@ GRANT SELECT ON V_$RECOVERY_FILE_DEST TO ZABBIX;
 Usage
 =====
 <pre><code>
-» python pyora.py                                                                                                    
+» python3 pyora.py                                                                                                    
 usage: pyora.py [-h] [--username USERNAME] [--password PASSWORD]
                 [--address ADDRESS] [--database DATABASE]
                 
@@ -44,15 +44,15 @@ pyora.py: error: too few arguments
 
 
 # Check Oracle version
-0: python pyora.py --username pyora --password secret --address 127.0.0.1 --database DATABASE version
+0: python3 pyora.py --username pyora --password secret --address 127.0.0.1 --database DATABASE version
 Oracle Database 10g Enterprise Edition Release 10.2.0.4.0 - 64bi
 
 # Check Oracle active user count
-0: python pyora.py --username pyora --password secret --address 127.0.0.1 --database DATABASE activeusercount
+0: python3 pyora.py --username pyora --password secret --address 127.0.0.1 --database DATABASE activeusercount
 68
 
 # Show the tablespaces names in a JSON format
-0: python pyora.py show_tablespaces
+0: python3 pyora.py show_tablespaces
 {
 	"data":[
 	{ "{#TABLESPACE}":"ORASDPM"},
@@ -75,7 +75,7 @@ Oracle Database 10g Enterprise Edition Release 10.2.0.4.0 - 64bi
 }
 
 # Show a particular tablespace usage in %
-0: python pyora.py --username pyora --password secret --address 127.0.0.1 --database DATABASE tablespace SYSTEM
+0: python3 pyora.py --username pyora --password secret --address 127.0.0.1 --database DATABASE tablespace SYSTEM
 92.45
 
 </code></pre>

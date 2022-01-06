@@ -7,12 +7,13 @@
 """
 
 import argparse
-import cx_Oracle
 import inspect
 import json
 import re
 
-version = 0.2
+import cx_Oracle
+
+version = 0.0
 
 
 class Checks(object):
@@ -25,7 +26,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def rcachehit(self):
         """Read Cache hit ratio"""
@@ -40,7 +41,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def dsksortratio(self):
         """Disk sorts ratio"""
@@ -52,7 +53,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def activeusercount(self):
         """Count of active users"""
@@ -62,7 +63,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def dbsize(self):
         """Size of user data (without temp)"""
@@ -80,7 +81,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def dbfilesize(self):
         """Size of all datafiles"""
@@ -89,7 +90,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def version(self):
         """Oracle version (Banner)"""
@@ -97,7 +98,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def uptime(self):
         """Instance Uptime (seconds)"""
@@ -106,7 +107,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchmany(numRows=3)
         for i in res:
-            print i[0]
+            print(i[0])
 
     def commits(self):
         """User Commits"""
@@ -115,16 +116,18 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchmany(numRows=3)
         for i in res:
-            print i[0]
+            print(i[0])
 
     def rollbacks(self):
         """User Rollbacks"""
-        sql = "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from " \
-              "v$sysstat where name = 'user rollbacks'"
+        sql = (
+            "select nvl(to_char(value, 'FM99999999999999990'), '0') retvalue from "
+            "v$sysstat where name = 'user rollbacks'"
+        )
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def deadlocks(self):
         """Deadlocks"""
@@ -133,7 +136,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def redowrites(self):
         """Redo Writes"""
@@ -142,7 +145,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def tblscans(self):
         """Table scans (long tables)"""
@@ -151,7 +154,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def tblrowsscans(self):
         """Table scan rows gotten"""
@@ -160,7 +163,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def indexffs(self):
         """Index fast full scans (full)"""
@@ -169,7 +172,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def hparsratio(self):
         """Hard parse ratio"""
@@ -179,7 +182,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def netsent(self):
         """Bytes sent via SQL*Net to client"""
@@ -188,7 +191,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def netresv(self):
         """Bytes received via SQL*Net from client"""
@@ -197,7 +200,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def netroundtrips(self):
         """SQL*Net roundtrips to/from client"""
@@ -206,7 +209,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def logonscurrent(self):
         """Logons current"""
@@ -215,7 +218,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def lastarclog(self):
         """Last archived log sequence"""
@@ -224,7 +227,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def lastapplarclog(self):
         """Last applied archive log (at standby).Next items requires
@@ -235,7 +238,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def freebufwaits(self):
         """Free buffer waits"""
@@ -245,7 +248,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def bufbusywaits(self):
         """Buffer busy waits"""
@@ -255,7 +258,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def logswcompletion(self):
         """log file switch completion"""
@@ -265,7 +268,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def logfilesync(self):
         """Log file sync"""
@@ -275,7 +278,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def logprllwrite(self):
         """Log file parallel write"""
@@ -285,7 +288,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def enqueue(self):
         """Enqueue waits"""
@@ -295,7 +298,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def dbseqread(self):
         """DB file sequential read waits"""
@@ -305,7 +308,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def dbscattread(self):
         """DB file scattered read"""
@@ -315,7 +318,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def dbsnglwrite(self):
         """DB file single write"""
@@ -325,7 +328,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def dbprllwrite(self):
         """DB file parallel write"""
@@ -335,7 +338,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def directread(self):
         """Direct path read"""
@@ -345,7 +348,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def directwrite(self):
         """Direct path write"""
@@ -355,7 +358,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def latchfree(self):
         """latch free"""
@@ -365,46 +368,46 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def tablespace(self, name):
         """Get tablespace usage"""
-        sql = '''SELECT  tablespace_name,
+        sql = f"""SELECT  tablespace_name,
         100-(TRUNC((max_free_mb/max_size_mb) * 100)) AS USED
         FROM ( SELECT a.tablespace_name,b.size_mb,a.free_mb,b.max_size_mb,a.free_mb + (b.max_size_mb - b.size_mb) AS max_free_mb
         FROM   (SELECT tablespace_name,TRUNC(SUM(bytes)/1024/1024) AS free_mb FROM dba_free_space GROUP BY tablespace_name) a,
         (SELECT tablespace_name,TRUNC(SUM(bytes)/1024/1024) AS size_mb,TRUNC(SUM(GREATEST(bytes,maxbytes))/1024/1024) AS max_size_mb
         FROM   dba_data_files GROUP BY tablespace_name) b WHERE  a.tablespace_name = b.tablespace_name
-        ) where tablespace_name='{0}' order by 1'''.format(name)
+        ) where tablespace_name='{name}' order by 1"""
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[1]
+            print(i[1])
 
     def tablespace_abs(self, name):
         """Get tablespace in use"""
-        sql = '''SELECT df.tablespace_name "TABLESPACE", (df.totalspace - \
+        sql = f"""SELECT df.tablespace_name "TABLESPACE", (df.totalspace - \
               tu.totalusedspace) "FREEMB" from (select tablespace_name, \
               sum(bytes) TotalSpace from dba_data_files group by tablespace_name) \
               df ,(select sum(bytes) totalusedspace,tablespace_name from dba_segments \
               group by tablespace_name) tu WHERE tu.tablespace_name = \
-              df.tablespace_name and df.tablespace_name = '{0}' '''.format(name)
+              df.tablespace_name and df.tablespace_name = '{name}' """
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[1]
+            print(i[1])
 
     def show_tablespaces(self):
         """List tablespace names in a JSON like format for Zabbix use"""
         sql = "SELECT tablespace_name FROM dba_tablespaces ORDER BY 1"
         self.cur.execute(sql)
         res = self.cur.fetchall()
-        key = ['{#TABLESPACE}']
+        key = ["{#TABLESPACE}"]
         lst = []
         for i in res:
             d = dict(zip(key, i))
             lst.append(d)
-        print json.dumps({'data': lst})
+        print(json.dumps({"data": lst}))
 
     def show_tablespaces_temp(self):
         """List temporary tablespace names in a JSON like
@@ -413,43 +416,43 @@ class Checks(object):
               CONTENTS='TEMPORARY'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
-        key = ['{#TABLESPACE_TEMP}']
+        key = ["{#TABLESPACE_TEMP}"]
         lst = []
         for i in res:
             d = dict(zip(key, i))
             lst.append(d)
-        print json.dumps({'data': lst})
+        print(json.dumps({"data": lst}))
 
     def check_archive(self, archive):
         """List archive used"""
-        sql = "select trunc((total_mb-free_mb)*100/(total_mb)) PCT from \
-              v$asm_diskgroup_stat where name='{0}' \
-              ORDER BY 1".format(archive)
+        sql = f"select trunc((total_mb-free_mb)*100/(total_mb)) PCT from \
+              v$asm_diskgroup_stat where name='{archive}' \
+              ORDER BY 1"
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def show_asm_volumes(self):
         """List als ASM volumes in a JSON like format for Zabbix use"""
         sql = "select NAME from v$asm_diskgroup_stat ORDER BY 1"
         self.cur.execute(sql)
         res = self.cur.fetchall()
-        key = ['{#ASMVOLUME}']
+        key = ["{#ASMVOLUME}"]
         lst = []
         for i in res:
             d = dict(zip(key, i))
             lst.append(d)
-        print json.dumps({'data': lst})
+        print(json.dumps({"data": lst}))
 
     def asm_volume_use(self, name):
         """Get ASM volume usage"""
-        sql = "select round(((TOTAL_MB-FREE_MB)/TOTAL_MB*100),2) from \
-              v$asm_diskgroup_stat where name = '{0}'".format(name)
+        sql = f"select round(((TOTAL_MB-FREE_MB)/TOTAL_MB*100),2) from \
+              v$asm_diskgroup_stat where name = '{name}'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def query_lock(self):
         """Query lock"""
@@ -457,7 +460,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def query_redologs(self):
         """Redo logs"""
@@ -465,7 +468,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def query_rollbacks(self):
         """Query Rollback"""
@@ -474,7 +477,7 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def query_sessions(self):
         """Query Sessions"""
@@ -483,26 +486,27 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def tablespace_temp(self, name):
         """Query temporary tablespaces"""
-        sql = "SELECT round(((TABLESPACE_SIZE-FREE_SPACE)/TABLESPACE_SIZE)*100,2) \
+        sql = f"SELECT round(((TABLESPACE_SIZE-FREE_SPACE)/TABLESPACE_SIZE)*100,2) \
               PERCENTUAL FROM dba_temp_free_space where \
-              tablespace_name='{0}'".format(name)
+              tablespace_name='{name}'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def query_sysmetrics(self, name):
         """Query v$sysmetric parameters"""
-        sql = "select value from v$sysmetric where METRIC_NAME ='{0}' and \
-              rownum <=1 order by INTSIZE_CSEC".format(name.replace('_', ' '))
+        sql = f"""select value from v$sysmetric where METRIC_NAME ='{name.replace("_", " ")}' and \
+              rownum <=1 order by INTSIZE_CSEC"""
+        )
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def fra_use(self):
         """Query the Fast Recovery Area usage"""
@@ -511,38 +515,37 @@ class Checks(object):
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
     def show_users(self):
         """Query the list of users on the instance"""
         sql = "SELECT username FROM dba_users ORDER BY 1"
         self.cur.execute(sql)
         res = self.cur.fetchall()
-        key = ['{#DBUSER}']
+        key = ["{#DBUSER}"]
         lst = []
         for i in res:
             d = dict(zip(key, i))
             lst.append(d)
-        print json.dumps({'data': lst})
+        print(json.dumps({"data": lst}))
 
     def user_status(self, dbuser):
         """Determines whether a user is locked or not"""
-        sql = "SELECT account_status FROM dba_users WHERE username='{0}'" \
-            .format(dbuser)
+        sql = f"SELECT account_status FROM dba_users WHERE username='{dbuser}'"
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
-            print i[0]
+            print(i[0])
 
 
 class Main(Checks):
     def __init__(self):
         parser = argparse.ArgumentParser()
-        parser.add_argument('--username')
-        parser.add_argument('--password')
-        parser.add_argument('--address')
-        parser.add_argument('--database')
-        parser.add_argument('--port')
+        parser.add_argument("--username")
+        parser.add_argument("--password")
+        parser.add_argument("--address")
+        parser.add_argument("--database")
+        parser.add_argument("--port")
 
         subparsers = parser.add_subparsers()
 
@@ -560,11 +563,10 @@ class Main(Checks):
         a = self.args
         username = a.username
         password = a.password
-        address = a.address if a.address else '127.0.0.1'
-        database = a.database if a.database else 'orcl'
+        address = a.address if a.address else "127.0.0.1"
+        database = a.database if a.database else "orcl"
         port = a.port if a.port else 1521
-        self.db = cx_Oracle.connect("{0}/{1}@{2}:{3}/{4}".format(
-            username, password, address, port, database))
+        self.db = cx_Oracle.connect(f"{username}/{password}@{address}:{port}/{database}")
         self.cur = self.db.cursor()
 
     def db_close(self):
@@ -580,9 +582,9 @@ class Main(Checks):
                 return self.args.func(*callargs)
             finally:
                 self.db_close()
-        except Exception, err:
-            print 0
-            print str(err)
+        except Exception as err:
+            print(0)
+            print(str(err))
 
 
 if __name__ == "__main__":
