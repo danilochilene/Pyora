@@ -502,7 +502,6 @@ class Checks(object):
         """Query v$sysmetric parameters"""
         sql = f"""select value from v$sysmetric where METRIC_NAME ='{name.replace("_", " ")}' and \
               rownum <=1 order by INTSIZE_CSEC"""
-        )
         self.cur.execute(sql)
         res = self.cur.fetchall()
         for i in res:
