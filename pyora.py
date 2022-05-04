@@ -552,7 +552,7 @@ class Main(Checks):
             if not name.startswith("_"):
                 p = subparsers.add_parser(name)
                 method = getattr(self, name)
-                argnames = inspect.getargspec(method).args[1:]
+                argnames = inspect.signature(method).parameters
                 for argname in argnames:
                     p.add_argument(argname)
                 p.set_defaults(func=method, argnames=argnames)
