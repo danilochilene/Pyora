@@ -537,6 +537,16 @@ class Checks(object):
             print(i[0])
 
 
+    def query_temp(self):
+        '''Query temp'''
+        sql = "select nvl(sum(blocks*8192)/1024/1024,0) from gv$session s, gv$sort_usage u where s.saddr = u.session_addr"
+        self.cur.execute(sql)
+        res = self.cur.fetchall()
+        for i in res:
+            print(i[0])
+
+
+
 class Main(Checks):
     def __init__(self):
         parser = argparse.ArgumentParser()
